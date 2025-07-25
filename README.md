@@ -224,3 +224,13 @@ The purpose of this script is to find the gene clusters with identical sequences
 ```bash
 nohup python /data/lizw/script/paml_pipeline/check_identical_sequence.py middle_done_all 20240124_identical_cluster.txt &
 ```
+
+## Computing_scripts
+`unweighted_unifrac.R`
+The purpose of this script is to calculate unweighted unifrac distance and perform NMDS and ANOSIM analysis.
+
+`evolutionary_rates.R`
+The purpose of this script is to calculate the evolutionary rates of samples based on their branch lengths in a phylogenetic tree.
+
+`all_aa_gravy.R`
+The purpose of the script is to calculate GRAVY value of community-level amino acid composition.
