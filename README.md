@@ -234,3 +234,6 @@ The purpose of this script is to calculate the evolutionary rates of samples bas
 
 `all_aa_gravy.R`
 The purpose of the script is to calculate GRAVY value of community-level amino acid composition.
+
+`glm_hydrophobic.R`
+The purpose of this script is to test the response of ps site for hydrophobic amino acids conversion to temperature changes in protein sequences.
