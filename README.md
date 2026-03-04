@@ -83,6 +83,22 @@ The purpose of this script is to run PAML on super computing clusters.
 python3 final_version_mpi.py msa_nuc tree paml
 ```
 
+`1.batch_run_mutation_detection.py`
+
+The purpose of this script is to run pal2nal, muscle5, and fastTree for the mutation counts.
+
+```bash
+nohup python /data/lizw/script/extra_analysis/1.batch_run_mutation_detection.py gene_clusters 25 &
+```
+
+`2.parse_mutation_count.py`
+
+The purpose of this script is to calculate the mutation counts of gene clusters.
+
+```bash
+nohup python /data/lizw/script/extra_analysis/2.parse_mutation_count.py prepared_gene_clusters mutation_out.txt &
+```
+
 ## PAML_results_parser
 
 `batch_run_ps_check_and_site_extraction.py`
@@ -159,10 +175,19 @@ python /data/lizw/script/paml_pipeline/18.detect_change_in_ps_sites.py ps_site p
 
 `batch_count_ps_clstr.py`
 
-The purpose of this script is to summary the data mentioned above.
+The purpose of this script is to summarize the data mentioned above.
 
 ```bash
 python /data/lizw/script/paml_pipeline/batch_count_ps_clstr.py parse_1_2 summary_parse_1_2.txt
+```
+
+
+`18.batch_extract_ps_site_verified_by_fubar.py`
+
+The purpose of this script is to parse FUBAR model results and further verify the ps loci.
+
+```bash
+nohup python /data/lizw/script/extra_analysis/18.batch_extract_ps_site_verified_by_fubar.py codeml_ps_site_out.txt fubar_out.txt all_msa ps_loci ps_loci_summary.txt &
 ```
 
 ## EPS_analysis
@@ -177,7 +202,7 @@ nohup python /data/lizw/script/paml_pipeline/27.batch_run_phobius_and_parse.py a
 
 `convert_ps_site_count_to_proportion.py`
 
-The purpose of this script is to convert the PS loci values to proportional data, also remove the gaps in PS loci summary.
+The purpose of this script is to convert the PS loci values to proportional data, and to remove the gaps in the PS loci summary.
 
 ```bash
 python /data/lizw/script/paml_pipeline/convert_ps_site_count_to_proportion.py 20240228_ps_count_site.txt 0 20240228_ps_count_rm_gap.txt
@@ -224,16 +249,3 @@ The purpose of this script is to find the gene clusters with identical sequences
 ```bash
 nohup python /data/lizw/script/paml_pipeline/check_identical_sequence.py middle_done_all 20240124_identical_cluster.txt &
 ```
-
-## Computing_scripts
-`unweighted_unifrac.R`
-The purpose of this script is to calculate unweighted unifrac distance and perform NMDS and ANOSIM analysis.
-
-`evolutionary_rates.R`
-The purpose of this script is to calculate the evolutionary rates of samples based on their branch lengths in a phylogenetic tree.
-
-`all_aa_gravy.R`
-The purpose of the script is to calculate GRAVY value of community-level amino acid composition.
-
-`glm_hydrophobic.R`
-The purpose of this script is to test the response of ps site for hydrophobic amino acids conversion to temperature changes in protein sequences.
