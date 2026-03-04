@@ -133,14 +133,6 @@ The purpose of this script is to find gene clusters detected with significantly 
 python /data/lizw/script/paml_pipeline/12.get_clstr_selected.py p_adj.txt clstr ps_clstr 1
 ```
 
-`14.get_w_for_ps_gene.py`
-
-The purpose of this script is to parse the omega output of M0.
-
-```bash
-python /data/lizw/script/paml_pipeline/14.get_w_for_ps_gene.py cluster419_and_selected/cluster419 ps_omega.txt
-```
-
 `15.merge_p_anno_and_omega.py`
 
 The purpose of this script is to summarize data of omega and PS signal.
