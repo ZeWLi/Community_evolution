@@ -1,4 +1,4 @@
-# Community_evolution
+<img width="432" height="36" alt="image" src="https://github.com/user-attachments/assets/eb905e10-841f-4c32-bb7d-457553c408d7" /># Community_evolution
 Scripts that used for the analysis of community evolutionary rates and natural selection
 
 ## PAML pipeline
@@ -234,10 +234,10 @@ The purpose of the script is to parse the KEGG annotations of PS genes (we have 
 nohup python /data/lizw/script/paml_pipeline/13.parse_anno_result_and_vote_kegg.py ps_clstr /data/lizw/0.all_sample_ecology/new_paml/all_kofam ps_clstr out.txt &
 ```
 
-`check_identical_sequence.py`
+`spearman_hydrophobic.R`
 
-The purpose of this script is to find the gene clusters with identical sequences that considered as “no variations”.
+The purpose of this script is to find PS loci with a hydrophobic value that changes significantly correlated to temperatures.
 
 ```bash
-nohup python /data/lizw/script/paml_pipeline/check_identical_sequence.py middle_done_all 20240124_identical_cluster.txt &
+nohup Rscript /data/lizw/0.all_sample_ecology/paml_rerun/parse/spearman_hydrophobic.R /data/lizw/0.all_sample_ecology/paml_rerun/parse/test/sample_temperature.txt output hydrophobic_glm.out &
 ```
