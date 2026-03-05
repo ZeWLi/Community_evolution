@@ -1,4 +1,4 @@
-<img width="432" height="36" alt="image" src="https://github.com/user-attachments/assets/eb905e10-841f-4c32-bb7d-457553c408d7" /># Community_evolution
+# Community_evolution
 Scripts that used for the analysis of community evolutionary rates and natural selection
 
 ## PAML pipeline
